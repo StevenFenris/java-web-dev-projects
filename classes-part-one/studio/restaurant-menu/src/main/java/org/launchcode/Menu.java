@@ -75,4 +75,12 @@ public class Menu {
         this.dateModified = new Date();
         return theMenu;
     }
+
+    public void removeItemByName (String itemName){
+        for(MenuItem e : theMenu) {
+            if (e.getName().equalsIgnoreCase(itemName)) {
+                theMenu.remove(e);
+            }
+        }
+    }
 }

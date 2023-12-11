@@ -7,15 +7,10 @@ public class MenuItem {
         private String name;
         private String description;
         private double price = 0.0;
-        private Date dateAdded;
+        private final Date dateAdded;
         private boolean isNew;
-        public String getCategory(){
-            return category;
-        }
-        public void setCategory(String aCategory){
-            this.category = aCategory;
-        }
-        public MenuItem(String category, String name, String description, double price) {
+
+        public MenuItem(String category, String name, String description, double price) { //struct
             this.category = category;
             this.name = name;
             this.description = description;
@@ -24,12 +19,25 @@ public class MenuItem {
             this.isNew = false;
         }
 
-    public String printItem(){
+    public String printItem(){ //print method that includes New item print case
             String pricePrint = Double.toString(this.price);
             if(this.isNew){
                 return ("NEW! " + this.name + ": " + this.description + "   $" + pricePrint);
             } else return (this.name + ": " + this.description + "   $" + pricePrint);
 
+    }
+
+
+
+
+//gets and sets
+
+
+    public String getCategory(){
+        return category;
+    }
+    public void setCategory(String aCategory){
+        this.category = aCategory;
     }
 
     public double getPrice() {
@@ -47,10 +55,10 @@ public class MenuItem {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public void setDateAdded(Date dateAdded) {
-        this.dateAdded = dateAdded;
+    public String getName(){
+            return name;
     }
+
 
     public Date getDateAdded(){
             return this.dateAdded;
